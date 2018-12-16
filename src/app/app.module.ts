@@ -25,7 +25,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase, 'fcc-book-trading'),
+    AngularFireModule.initializeApp(environment.firebase, 'soundtocolor'),
     AngularFireDatabaseModule
   ],
   providers: [],

@@ -1,11 +1,5 @@
 <h2>Welcome to the test</h2>
 
-<ul>
-    <li *ngFor="let participant of participants ">
-        <pre>{{ participant | json }}</pre>
-    </li>
-</ul>
-
 <p>Here you will be presented with [number] of questions. 
   Please listen to the sound and intuitively associate the color with a sound.
 <b>Please turn on the speakers.</b></p>
@@ -37,24 +31,10 @@
         <p id="p-{{question}}-{{i}}" style="display: none">Your answer is saved!</p>
     </div>
 </div>
-  
 
-<div hidden> 
-<h2 [ngClass]="{
-  'gray': h2Style,
-  'large': !h2Style
-}">Example 1</h2>
-
-
-<h1 [style.color]="h2Style ? 'gray': 'black'">Example 2</h1> 
-If h2Style is true then it's gray, if false then it's black
-
-<h1 [ngStyle]="{
-  'color': h2Style ? 'gray' : 'black',
-  'font-size': !h2Style ? '1em' : '4em'
-}">Example 3</h1>
-If h2Style doesn't exsist then '1em'
-
-<button (click)="firstClick()">Test examples</button>
+<div class="card text-center card-space card-body">
+    <button type="button" class="btn btn-success"
+    (click)="sendToFirebase()">Send your answers!</button>
+    <p id="thanks" style="display: none">Thank you!</p>
 </div>
 

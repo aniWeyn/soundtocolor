@@ -108,30 +108,18 @@ export class TestComponent implements OnInit {
   }
 
   sendToFirebase() {
-    var data = {
-      "A4": [23, 45],
-      "B4": [23, 45],
-      "C5": [23, 45],
-      "D5": [23, 45],
-      "E5": [23, 45],
-      "F5": [23, 45],
-      "G5": [23, 45],
-      "A5": [23, 45]
-    };
+    var data = this.userReply;
 
     const obj = this.db.database.ref('/participants');
     obj.push(data);
+    document.getElementById("thanks").style.display = "block";
     console.log('Success');
   }
 
   addAnswer(newAnswer: string, object) {
     var currentNote = object.target.attributes['value'].value;
-   //var attribute = object.target.getAttribute['index'].value;
-    //var index = object.target.getAttribute('data-value');
-    //var attribute = object.target.data('value');
     var index = object.target.attributes['name'].value;
     console.log(currentNote, index)
-    //console.log(index)
     this.disableButton(currentNote, index)
     var stop = false;
     if (currentNote == "A4") {
@@ -159,12 +147,12 @@ export class TestComponent implements OnInit {
       this.userReply.F5[i] = newAnswer.substring(4, newAnswer.indexOf(","));
     }
     if (currentNote == "G5") {
-      var i = this.userReply.A4.length;
-      this.userReply.A4[i] = newAnswer.substring(4, newAnswer.indexOf(","));
+      var i = this.userReply.G5.length;
+      this.userReply.G5[i] = newAnswer.substring(4, newAnswer.indexOf(","));
     }
     if (currentNote == "A5") {
-      var i = this.userReply.A4.length;
-      this.userReply.A4[i] = newAnswer.substring(4, newAnswer.indexOf(","));
+      var i = this.userReply.A5.length;
+      this.userReply.A5[i] = newAnswer.substring(4, newAnswer.indexOf(","));
     }
   }
 
@@ -186,52 +174,4 @@ export class TestComponent implements OnInit {
     document.getElementById(pName).style.display = "block";
     document.getElementById(pName).style.visibility = 'visible';
   }
-
-  addHue(join, hue) {
-
-  }
-
-
-  /*jakasFunkcja(){
-    for(var color in this.userReply[note])
-    {
-      if(color.substring(2, 3) == this.A4.value.toString())
-      {
-  
-      }
-      //note = A5
-      //color = A51, A52, A53, A54, A55
-      console.log("note" + note)
-      console.log("color: " + color)
-      console.log("color.ValueOf: " + color.substring(2, 3));
-    }
-  }*/
-
-
 }
-
-
-
-/*if(this.userReply[note[color]] == null)
-{
-  
-  var answer = currentNote + this.A4.value;
-  this.notesCounter(currentNote, newAnswer)
-  this.userReply[note[answer]] = newAnswer.substring(4, newAnswer.indexOf(","));
-  //this.userReply.A4[answer] = newAnswer.substring(4, newAnswer.indexOf(","));
-  //this.userReply[note[color]] = newAnswer.substring(4, newAnswer.indexOf(","));
-  console.log(color +" color: " +this.userReply[note[color]]);
-  console.log("answer: "+this.userReply.A4[answer])
-  stop = true;
-  console.log("stop: "+stop)
-}*/
-
-
-        //console.log("note: "+note +" curretNote: "+ currentNote, this.A4.value);
-        //console.log("userReply[note]: "+this.userReply[note])
-
-        //console.log("if stop: "  + stop)
-        //console.log("color: "+color)
-        //console.log("A4.A41 color: " + this.userReply.A4.A41, "A4.A42 color: " + this.userReply.A4.A42 );
-        //console.log(color +" color: " +this.userReply[note[color]]);
-
