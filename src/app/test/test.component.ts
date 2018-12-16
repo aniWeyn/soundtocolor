@@ -115,6 +115,8 @@ export class TestComponent implements OnInit {
 
     const obj = this.db.database.ref('/participants');
     obj.push(data);
+    
+    document.getElementById("btn-fire").style.display = "none";
     document.getElementById("thanks").style.display = "block";
     console.log('Success');
   }
