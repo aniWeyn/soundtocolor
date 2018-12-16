@@ -46,7 +46,7 @@ export class TestComponent implements OnInit {
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
-    var notes = ["A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"];
+    var notes = ["A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5", "A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5","A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5","A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5","A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5","A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5","A4", "B4", "C5", "D5", "E5", "F5", "G5", "A5"];
     //var notes = ["A4","B4","C5","D5","E5","F5","G5","A5"]
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
@@ -86,15 +86,18 @@ export class TestComponent implements OnInit {
           template: '<div class="colorpicker">' +
             '<div class="colorpicker-hue"><i class="colorpicker-guide"></i></div>' +
             '</div>'
-        }).on('colorpickerChange colorpickerCreate', function (e) {
+        })
+        .on('colorpickerCreate', function (e) {
+          e.colorpicker.picker.parents('.card').find('.color-div')
+            .css('background-color', "#FFFFFF")
+        })
+        .on('colorpickerChange', function (e) {
           e.colorpicker.picker.parents('.card').find('.color-div')
             .css('background-color', e.value)
         });
       }
     });
   }
-
-
 
   firstClick() {
     console.log('clicked');
