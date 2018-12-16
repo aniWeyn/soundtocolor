@@ -7,7 +7,7 @@
 <div *ngFor="let question of questions; let i = index" class="card card-space">
     <img class="card-img-top" src="" alt="">
     <div class="card-header">
-      <h5 class="card-title">Question {{i}} + {{question}}</h5>
+      <h5 class="card-title">Question {{i}}</h5>
     </div>
     <div class="card-body text-left" id="playSound-{{question}}-{{i}}">
         <button type="button" class="btn btn-dark" (click)="toneJS($event)" value={{question}}>Play the sound</button>
