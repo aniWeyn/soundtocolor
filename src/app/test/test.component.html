@@ -1,8 +1,12 @@
 <h2>Welcome to the test!</h2>
-
-<p>You will be presented 80 short questions. 
+<div class="">
+<p>You will be presented 80 short questions. It will take you around 10-20 minutes.
   Please intuitively associate the color with a sound.
 <b>Please turn on the speakers.</b></p>
+</div>
+<div class="withdraw">
+        To withdraw from the studies with saving answers scroll down to the "Send your answers!" green button.
+</div>
 <!--text-center-->
 <div *ngFor="let question of questions; let i = index" class="card card-space">
     <img class="card-img-top" src="" alt="">
@@ -10,7 +14,7 @@
       <h5 class="card-title">Question {{i}}</h5>
     </div>
     <div class="card-body text-left" id="playSound-{{question}}-{{i}}">
-        <button type="button" class="btn btn-dark" (click)="toneJS($event)" value={{question}}>Play the sound</button>
+        <button type="button" class="btn btn-secondary" (click)="toneJS($event)" value={{question}}>Play the sound</button>
     </div>
     <div class="card-body" id="sliderTxt-{{question}}-{{i}}">
         <p class="card-text">Use slider to change the color.</p>
@@ -24,7 +28,7 @@
             class="form-control input-lg"/>
         </div>
     </div>
-    <div class="card-footer text-muted left">
+    <div class="card-footer text-muted text-center">
         <button type="button" class="btn btn-dark" id="btn-{{question}}-{{i}}"
         (click)="addAnswer(newAnswer.value, $event)"
         value={{question}} name={{i}}>Save answer</button>
@@ -32,7 +36,7 @@
     </div>
 </div>
 
-<div class="card text-center card-space card-body">
+<div class="card text-center card-space card-body" id="jump">
     <button type="button" class="btn btn-success" id="btn-fire"
     (click)="sendToFirebase()">Send your answers!</button>
     <p id="thanks" style="display: none">Thank you!</p>
