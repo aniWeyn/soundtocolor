@@ -8,10 +8,12 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { TestComponent } from './test/test.component';
+import { ResultsComponent } from './results/results.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { environment } from '../environments/environment';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    TestComponent
+    TestComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
