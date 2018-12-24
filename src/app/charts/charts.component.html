@@ -1,0 +1,22 @@
+<p>
+  charts works!
+</p>
+
+<h1>
+ Results!
+</h1>
+<button type="button" class="btn btn-dark"
+(click)="runChartJS()">Save answer</button>
+<div>
+  <canvas id="myChart"
+      baseChart
+      [chartType]="'bar'"
+      [datasets]="chartData"
+      [labels]="labels"
+      [options]="chartOptions"
+      [legend]="true"
+      [colors]="colors"
+      (chartClick)="onChartClick($event)"
+      width="400" height="100">
+  </canvas>
+</div>

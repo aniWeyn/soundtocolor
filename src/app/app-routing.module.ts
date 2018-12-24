@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { TestComponent } from './test/test.component';
 import { ResultsComponent } from './results/results.component';
+import { ChartsComponent } from './charts/charts.component';
 import { Meta } from '@angular/platform-browser';
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   {path: 'test', component: TestComponent},
-  {path: 'results', component: ResultsComponent}
+  {path: 'results', component: ResultsComponent},
+  {path: 'charts', component: ChartsComponent}
 ];
 
 @NgModule({

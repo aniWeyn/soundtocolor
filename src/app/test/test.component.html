@@ -42,3 +42,16 @@
     <p id="thanks" style="display: none">Thank you!</p>
 </div>
 
+<div class="myChart">
+    <canvas id="myChart"
+    baseChart
+    [chartType]="'bar'"
+    [datasets]="chartData"
+    [labels]="labels"
+    [options]="chartOptions"
+    [legend]="true"
+    [colors]="colors"
+    (chartClick)="onChartClick($event)"
+    width="400" height="100">
+    </canvas>
+</div>

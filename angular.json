@@ -38,7 +38,8 @@
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "./node_modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js",
-              "./node_modules/tone/build/Tone.js"
+              "./node_modules/tone/build/Tone.js",
+              "./node_modules/chart.js/dist/Chart.min.js"
             ]
           },
           "configurations": {
