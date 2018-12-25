@@ -52,7 +52,7 @@ export class TestComponent implements OnInit {
   //----------------------
 
   //public participants: AngularFireList<Participant[]>;
-  // constructor(afDb: AngularFireDatabase) {
+   //constructor(afDb: AngularFireDatabase) {
   //afDb.list<Participant>('/participants').valueChanges().subscribe(console.log);
   //}
 
